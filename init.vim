@@ -30,6 +30,9 @@ set expandtab
 set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 
+set clipboard=unnamed
+
+
 " incremental substitution (neovim)
 if has('nvim')
   set inccommand=split

@@ -88,7 +88,7 @@ nmap <space>nt :NERDTreeFind<CR>
 let g:user_emmet_install_global = 0
 let g:user_emmet_mode='n'
 let g:user_emmet_leader_key = ','
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,svelte EmmetInstall
 
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
