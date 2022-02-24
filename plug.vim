@@ -13,16 +13,23 @@ if has("nvim")
   Plug 'kristijanhusak/defx-icons'
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'neovim/nvim-lspconfig'
-  Plug 'glepnir/lspsaga.nvim'
+  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+
   Plug 'folke/lsp-colors.nvim'
-  Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'onsails/lspkind-nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
-
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
   Plug 'xuyuanp/nerdtree-git-plugin'

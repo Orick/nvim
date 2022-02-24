@@ -42,6 +42,10 @@ local on_attach = function(client, bufnr)
   --buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   -- formatting
+  --if client.name == 'tsserver' then
+  --  client.resolved_capabilities.document_formatting = false
+  --end
+
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -49,7 +53,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
-  require'completion'.on_attach(client, bufnr)
+  --require'completion'.on_attach(client, bufnr)
 
   --protocol.SymbolKind = { }
   protocol.CompletionItemKind = {
@@ -81,16 +85,36 @@ local on_attach = function(client, bufnr)
   }
 end
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach
-}
+-- Set up completion using nvim_cmp with LSP source
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
+
+--nvim_lsp.flow.setup {
+--  on_attach = on_attach,
+--  capabilities = capabilities
+--}
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" }
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript"},
+  capabilities = capabilities
 }
 
-nvim_lsp.svelte.setup{ }
+nvim_lsp.svelte.setup{
+  capabilities = capabilities,
+  filetypes = { "svelte" }
+}
+
+nvim_lsp.pyright.setup{
+  capabilities = capabilities,
+  filetypes = { "python", "py" }
+}
+
+nvim_lsp.jsonls.setup{
+  capabilities = capabilities,
+  filetypes = {"json"}
+}
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -128,26 +152,29 @@ nvim_lsp.diagnosticls.setup {
     formatters = {
       eslint_d = {
         command = 'eslint_d',
+        rootPatterns = { '.git' },
         args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
         rootPatterns = { '.git' },
       },
       prettier = {
         command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
+        rootPatterns = { '.git' },
+        -- requiredFiles: { 'prettier.config.js' },
+        args = { '--stdin', '--stdin-filepath', '%filename' }
       }
     },
     formatFiletypes = {
       css = 'prettier',
-      javascript = 'eslint_d',
-      javascriptreact = 'eslint_d',
+      javascript = 'prettier',
+      javascriptreact = 'prettier',
       json = 'prettier',
       scss = 'prettier',
       less = 'prettier',
-      typescript = 'eslint_d',
-      typescriptreact = 'eslint_d',
+      typescript = 'prettier',
+      typescriptreact = 'prettier',
       json = 'prettier',
       markdown = 'prettier',
-      svelte = 'eslint_d',
+      svelte = 'prettier',
     }
   }
 }

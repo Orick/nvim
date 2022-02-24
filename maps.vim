@@ -64,7 +64,7 @@ map <C-l> <C-w>l
 "let mapleader=" "
 map <space>+ :vertical resize +5<CR>
 map <space>- :vertical resize -6<CR>
-nmap <space>w :w<CR>
+nmap <space>w :w!<CR>
 nmap <space>q :q<CR>
 :verbose imap <tab>
 map <space>p :GitGutterPreviewHunk<CR>
