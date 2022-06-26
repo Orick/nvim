@@ -13,6 +13,7 @@ if has("nvim")
   Plug 'kristijanhusak/defx-icons'
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
   Plug 'L3MON4D3/LuaSnip'
   Plug 'hrsh7th/vim-vsnip'
@@ -27,8 +28,10 @@ if has("nvim")
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'onsails/lspkind-nvim'
   Plug 'nvim-lua/popup.nvim'
+
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+
   Plug 'windwp/nvim-autopairs'
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
@@ -39,9 +42,19 @@ if has("nvim")
   Plug 'airblade/vim-gitgutter'
   Plug 'mattn/emmet-vim'
   Plug 'valloric/matchtagalways'
-endif
+
+  Plug 'yggdroot/indentline'
+  Plug 'tpope/vim-commentary'
+
+  Plug 'github/copilot.vim', {'branch': 'release'}
+
+  Plug 'dense-analysis/ale'
+
+  endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
+
+let g:NERDTreeStatusline = '%#NonText#'

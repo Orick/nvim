@@ -8,6 +8,35 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_filetype_changed = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_completion_autoimport = 0
+let g:ale_enabled = 0
+
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'svelte': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'graphql': ['prettier'],
+\   'markdown': ['prettier'],
+\   'yaml': ['prettier'],
+\   'json': ['prettier'],
+\   'python': ['autopep8']
+\}
+
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+
 set updatetime=400
 set mouse=a
 set number
@@ -31,7 +60,6 @@ set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 
 set clipboard=unnamed
-
 
 " incremental substitution (neovim)
 if has('nvim')

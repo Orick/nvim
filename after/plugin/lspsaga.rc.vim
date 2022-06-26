@@ -15,11 +15,10 @@ EOF
 
 
 
-"buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
-"buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-nnoremap <silent> <C-j> <Cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-
+"nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
+"nnoremap <silent> <C-j> <Cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
 "nnoremap <silent> <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
 "nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
 
