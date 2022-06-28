@@ -5,7 +5,7 @@ lspkind.init({
   -- enables text annotations
   --
   -- default: true
-  with_text = true,
+  mode = 'symbol',
 
   -- default symbol map
   -- can be either 'default' (requires nerd-fonts font) or
@@ -42,33 +42,6 @@ lspkind.init({
     Struct = '', -- Struct
     Event = '', -- Event
     Operator = 'ﬦ', -- Operator
-    TypeParameter = '', -- TypeParameter
-  }
- -- symbol_map = {
- --   Text = "?",
- --   Method = "?",
- --   Function = "?",
- --   Constructor = "?",
- --   Field = "?",
- --   Variable = "?",
- --   Class = "?",
- --   Interface = "?",
- --   Module = "?",
- --   Property = "?",
- --   Unit = "?",
- --   Value = "?",
- --   Enum = "?",
- --   Keyword = "?",
- --   Snippet = "?",
- --   Color = "?",
- --   File = "?",
- --   Reference = "?",
- --   Folder = "?",
- --   EnumMember = "?",
- --   Constant = "?",
- --   Struct = "?",
- --   Event = "?",
- --   Operator = "?",
- --   TypeParameter = "?"
- -- },
+    TypeParameter = '' -- TypeParameter
+  },
 })

@@ -19,6 +19,8 @@ EOF
 nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
 "nnoremap <silent> <C-j> <Cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
+
+nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
 "nnoremap <silent> <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
 "nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
 

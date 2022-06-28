@@ -9,6 +9,9 @@ scriptencoding utf-8
 if !1 | finish | endif
 
 
+"let g:node_host_prog = '/Users/alvarogutierrez/.nvm/versions/node/v14.16.0/bin/node'
+let $PATH = '/Users/alvarogutierrez/.nvm/versions/node/v14.16.0/bin:' . $PATH
+
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
@@ -20,10 +23,11 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_completion_autoimport = 0
 let g:ale_enabled = 0
 
+
+
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
-\   'svelte': ['prettier'],
 \   'html': ['prettier'],
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
@@ -31,11 +35,13 @@ let g:ale_fixers = {
 \   'markdown': ['prettier'],
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
-\   'python': ['autopep8']
+\   'python': ['autopep8'],
+\   'svelte': ['prettier']
 \}
 
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_javascript_prettier_use_global = 1
 
 set updatetime=400
 set mouse=a
