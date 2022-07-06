@@ -132,4 +132,6 @@ let s:colors = {
   \ 'lightGreen'  : "31B53E",
   \ 'white'       : "FFFFFF"
 \ }
+ 
+autocmd FileType python map <buffer> <space>ep <esc><CR>:exec '!python3' shellescape(@%, 1)<CR>
 

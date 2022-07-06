@@ -96,7 +96,18 @@ nvim_lsp.svelte.setup{
 nvim_lsp.pyright.setup{
   capabilities = capabilities,
   flags = lsp_flags,
-  filetypes = { "python", "py" }
+  filetypes = { "python", "py" },
+  --settings = {
+  --  python = {
+  --    analysis = {
+  --      typeCheckingMode = "strict"
+  --    }  
+  --  }
+  --} 
+  --root_dir = function(fname)
+  --  return util.root_pattern(".git", "setup.py",  "setup.cfg", "pyproject.toml", "requirements.txt")(fname) or
+  --    util.path.dirname(fname)
+  --  end;
 }
 
 nvim_lsp.jsonls.setup{
